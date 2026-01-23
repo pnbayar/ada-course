@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis and Design of Algorithms | 24PCA401</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --bg-color: #f8fafc;
+            --text-color: #1e293b;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 { margin: 0; font-size: 2.2rem; }
+        .course-code { font-weight: 300; opacity: 0.9; font-size: 1.2rem; }
+
+        .notice {
+            background-color: #fef2f2;
+            border-left: 4px solid #ef4444;
+            padding: 15px;
+            margin-bottom: 25px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .quick-links {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 15px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-syllabus { background-color: #059669; color: white; }
+        .btn-book { background-color: #7c3aed; color: white; }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        th {
+            background-color: #f1f5f9;
+            text-align: left;
+            padding: 15px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+        }
+
+        td {
+            padding: 15px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        tr:hover { background-color: #f8fafc; }
+
+        .topic-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+        }
+
+        .topic-link:hover { text-decoration: underline; }
+
+        @media (max-width: 600px) {
+            .quick-links { grid-template-columns: 1fr; }
+            h1 { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Analysis and Design of Algorithms</h1>
+        <div class="course-code">Course Code: 24PCA401</div>
+    </header>
+
+    <div class="notice">
+        <i class="fas fa-exclamation-circle" style="color: #ef4444; font-size: 1.5rem;"></i>
+        <p><strong>Note:</strong> Please use your <strong>Nitte email ID</strong> to access the Google Drive files.</p>
+    </div>
+
+    <div class="quick-links">
+        <a href="https://drive.google.com/file/d/1Z1bf9uiviM6LRtjLRceIXZpvCr9Rvjz-/view?usp=sharing" target="_blank" class="btn btn-syllabus">
+            <i class="fas fa-file-pdf"></i> Download Syllabus
+        </a>
+        <a href="https://drive.google.com/file/d/1FDuKQhCGGTjgPpzzyOgRknX5dHqQX1j6/view?usp=sharing" target="_blank" class="btn btn-book">
+            <i class="fas fa-book"></i> Course Textbook
+        </a>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th width="80px">Sl No.</th>
+                <th>Topic Description</th>
+                <th>Resources</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Introduction</td>
+                <td><a href="https://www.canva.com/design/DAG78hn03PE/DyGiOnEB4-jPut6L5Z7Uyw/view" class="topic-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Slides</a></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Fundamentals Of Algorithmic Problem Solving</td>
+                <td><a href="https://www.canva.com/design/DAG8OggP2WQ/3kwTmoy75JPNQjU6JMipGA/view" class="topic-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Slides</a></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Fundamentals Of The Analysis Of Algorithm Efficiency</td>
+                <td><a href="https://www.canva.com/design/DAG8Ou5pnKw/LHSSaW8hU4lQVB8QY2xDFQ/view" class="topic-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Slides</a></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Mathematical Analysis of Recursive Algorithms</td>
+                <td><a href="https://www.canva.com/design/DAG95bhYrxE/54rB3SEm5x_KVsKGybuudQ/view" class="topic-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Slides</a></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Brute Force and Exhaustive Search</td>
+                <td><a href="https://www.canva.com/design/DAG-jo_EbdM/zlCDLEyQhXUKdt7Hl6SRQg/view" class="topic-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Slides</a></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Brute Force Approaches (Contd..)</td>
+                <td><a href="https://www.canva.com/design/DAG_BfBKflY/f8Mx-gYShm4ZesFujth7Cw/view" class="topic-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Slides</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <footer style="margin-top: 50px; text-align: center; color: #64748b; font-size: 0.9rem;">
+        <p>© 2024 | Course Materials for 24PCA401</p>
+    </footer>
+</div>
+
+</body>
+</html>
