@@ -3,188 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Analysis and Design of Algorithms | 24PCA401</title>
+    <title>ADA Course & Lab | 24PCA401</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
     <style>
-        :root {
-            --primary-color: #2563eb;
-            --secondary-color: #1e40af;
-            --bg-color: #f8fafc;
-            --text-color: #1e293b;
-            --card-bg: #ffffff;
+        :root { --primary: #2563eb; --secondary: #1e40af; --bg: #f8fafc; --card: #ffffff; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); color: #1e293b; margin: 0; padding: 20px; }
+        .container { max-width: 1100px; margin: 0 auto; }
+        
+        header { 
+            text-align: center; padding: 30px; 
+            background: linear-gradient(135deg, var(--primary), var(--secondary)); 
+            color: white; border-radius: 15px; margin-bottom: 25px; 
         }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-        }
+        .section-title { border-left: 5px solid var(--primary); padding-left: 15px; margin: 40px 0 20px; }
+        
+        .resources-table { width: 100%; border-collapse: collapse; background: var(--card); border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .resources-table th { background: #f1f5f9; padding: 15px; text-align: left; }
+        .resources-table td { padding: 12px 15px; border-top: 1px solid #e2e8f0; }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        header {
-            text-align: center;
-            padding: 40px 20px;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 { margin: 0; font-size: 2.2rem; }
-        .course-code { font-weight: 300; opacity: 0.9; font-size: 1.2rem; }
-
-        .notice {
-            background-color: #fef2f2;
-            border-left: 4px solid #ef4444;
-            padding: 15px;
-            margin-bottom: 25px;
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .quick-links {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-
-        .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 15px;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .btn-syllabus { background-color: #059669; color: white; }
-        .btn-book { background-color: #7c3aed; color: white; }
-        .btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: var(--card-bg);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-
-        th {
-            background-color: #f1f5f9;
-            text-align: left;
-            padding: 15px;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 0.05em;
-        }
-
-        td {
-            padding: 15px;
-            border-top: 1px solid #e2e8f0;
-        }
-
-        tr:hover { background-color: #f8fafc; }
-
-        .topic-link {
-            color: var(--primary-color);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 500;
-        }
-
-        .topic-link:hover { text-decoration: underline; }
-
-        @media (max-width: 600px) {
-            .quick-links { grid-template-columns: 1fr; }
-            h1 { font-size: 1.6rem; }
-        }
+        .lab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+        .lab-card { background: var(--card); padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .code-box { max-height: 200px; overflow-y: auto; border-radius: 5px; margin: 10px 0; font-size: 0.85rem; }
+        .graph-img { width: 100%; border-radius: 8px; margin-top: 10px; border: 1px solid #ddd; }
+        
+        .btn { padding: 8px 15px; text-decoration: none; border-radius: 5px; font-weight: 500; display: inline-block; margin: 5px 0; }
+        .btn-blue { background: var(--primary); color: white; }
     </style>
 </head>
 <body>
 
 <div class="container">
     <header>
-        <h1>Analysis and Design of Algorithms</h1>
-        <div class="course-code">Course Code: 24PCA401</div>
+        <h1>Analysis And Design Of Algorithms</h1>
+        <p>Course Code: 24PCA401 | Lab Implementations</p>
     </header>
 
-    <div class="notice">
-        <i class="fas fa-exclamation-circle" style="color: #ef4444; font-size: 1.5rem;"></i>
-        <p><strong>Note:</strong> Please use your <strong>Nitte email ID</strong> to access the Google Drive files.</p>
+    <h2 class="section-title">Course Materials</h2>
+    <div style="margin-bottom: 20px;">
+        <a href="https://drive.google.com/file/d/1Z1bf9uiviM6LRtjLRceIXZpvCr9Rvjz-/view" class="btn btn-blue" target="_blank">Syllabus</a>
+        <a href="https://drive.google.com/file/d/1FDuKQhCGGTjgPpzzyOgRknX5dHqQX1j6/view" class="btn btn-blue" style="background:#7c3aed" target="_blank">Textbook</a>
     </div>
 
-    <div class="quick-links">
-        <a href="https://drive.google.com/file/d/1Z1bf9uiviM6LRtjLRceIXZpvCr9Rvjz-/view?usp=sharing" target="_blank" class="btn btn-syllabus">
-            <i class="fas fa-file-pdf"></i> Download Syllabus
-        </a>
-        <a href="https://drive.google.com/file/d/1FDuKQhCGGTjgPpzzyOgRknX5dHqQX1j6/view?usp=sharing" target="_blank" class="btn btn-book">
-            <i class="fas fa-book"></i> Course Textbook
-        </a>
-    </div>
-
-    <table>
+    <table class="resources-table">
         <thead>
-            <tr>
-                <th width="80px">Sl No.</th>
-                <th>Topic Description</th>
-                <th>Resources</th>
-            </tr>
+            <tr><th>Sl No</th><th>Topic</th><th>Link</th></tr>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>Introduction</td>
-                <td><a href="https://www.canva.com/design/DAG78hn03PE/DyGiOnEB4-jPut6L5Z7Uyw/view" class="topic-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Slides</a></td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Fundamentals Of Algorithmic Problem Solving</td>
-                <td><a href="https://www.canva.com/design/DAG8OggP2WQ/3kwTmoy75JPNQjU6JMipGA/view" class="topic-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Slides</a></td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Fundamentals Of The Analysis Of Algorithm Efficiency</td>
-                <td><a href="https://www.canva.com/design/DAG8Ou5pnKw/LHSSaW8hU4lQVB8QY2xDFQ/view" class="topic-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Slides</a></td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Mathematical Analysis of Recursive Algorithms</td>
-                <td><a href="https://www.canva.com/design/DAG95bhYrxE/54rB3SEm5x_KVsKGybuudQ/view" class="topic-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Slides</a></td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>Brute Force and Exhaustive Search</td>
-                <td><a href="https://www.canva.com/design/DAG-jo_EbdM/zlCDLEyQhXUKdt7Hl6SRQg/view" class="topic-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Slides</a></td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td>Brute Force Approaches (Contd..)</td>
-                <td><a href="https://www.canva.com/design/DAG_BfBKflY/f8Mx-gYShm4ZesFujth7Cw/view" class="topic-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Slides</a></td>
-            </tr>
+            <tr><td>1</td><td>Introduction</td><td><a href="https://www.canva.com/design/DAG78hn03PE/view" target="_blank">Slides</a></td></tr>
+            <tr><td>2</td><td>Fundamentals of Problem Solving</td><td><a href="https://www.canva.com/design/DAG8OggP2WQ/view" target="_blank">Slides</a></td></tr>
+            <tr><td>3</td><td>Algorithm Efficiency</td><td><a href="https://www.canva.com/design/DAG8Ou5pnKw/view" target="_blank">Slides</a></td></tr>
+            <tr><td>4</td><td>Recursive Algorithms</td><td><a href="https://www.canva.com/design/DAG95bhYrxE/view" target="_blank">Slides</a></td></tr>
+            <tr><td>5</td><td>Brute Force & Search</td><td><a href="https://www.canva.com/design/DAG-jo_EbdM/view" target="_blank">Slides</a></td></tr>
+            <tr><td>6</td><td>Brute Force Approaches (Contd..)</td><td><a href="https://www.canva.com/design/DAG_BfBKflY/view" target="_blank">Slides</a></td></tr>
         </tbody>
     </table>
 
-    <footer style="margin-top: 50px; text-align: center; color: #64748b; font-size: 0.9rem;">
-        <p>© 2024 | Course Materials for 24PCA401</p>
-    </footer>
+    <h2 class="section-title">Lab Programs & Performance Analysis</h2>
+    <div class="lab-grid">
+        
+        <div class="lab-card">
+            <h3>Selection Sort</h3>
+            <div class="code-box">
+                <pre><code class="language-python">def selection_sort(arr):
+    n = len(arr)
+    for i in range(n - 1):
+        min_index = i
+        for j in range(i + 1, n):
+            if arr[j] < arr[min_index]:
+                min_index = j
+        arr[i], arr[min_index] = arr[min_index], arr[i]</code></pre>
+            </div>
+            <p>Complexity: $O(n^2)$</p>
+            <img src="ADA/selection_sort_time_complexity.png" class="graph-img" alt="Selection Sort Analysis">
+            <a href="ADA/selection_sort.py" class="btn btn-blue" download>Download Code</a>
+        </div>
+
+        <div class="lab-card">
+            <h3>Bubble Sort</h3>
+            <div class="code-box">
+                <pre><code class="language-python">def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n - 1):
+        for j in range(0, n - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]</code></pre>
+            </div>
+            <p>Complexity: $O(n^2)$</p>
+            <img src="ADA/bubble_sort_time_complexity.png" class="graph-img" alt="Bubble Sort Analysis">
+            <a href="ADA/bubble_sort.py" class="btn btn-blue" download>Download Code</a>
+        </div>
+
+        <div class="lab-card">
+            <h3>Topological Sort</h3>
+            <p>Using source removal (indegree) method.</p>
+            <a href="ADA/topological_sort.py" class="btn btn-blue" download>Download Script</a>
+        </div>
+
+        <div class="lab-card">
+            <h3>Dijkstra's Algorithm</h3>
+            <p>Shortest path algorithm for weighted graphs.</p>
+            <a href="ADA/dijkstras.py" class="btn btn-blue" download>Download Script</a>
+        </div>
+
+        <div class="lab-card">
+            <h3>Prim's & Kruskal's</h3>
+            <p>Minimum Spanning Tree implementations.</p>
+            <a href="ADA/Prims.py" class="btn btn-blue" download>Prim's</a>
+            <a href="ADA/Kruskals.py" class="btn btn-blue" download>Kruskal's</a>
+        </div>
+
+        <div class="lab-card">
+            <h3>Newton's Square Root</h3>
+            <div class="code-box">
+                <pre><code class="language-python">guess = n / 2
+while(guess != (guess + n / guess) / 2):
+    guess = (guess + n / guess) / 2</code></pre>
+            </div>
+            <a href="ADA/square.py" class="btn btn-blue" download>Download Code</a>
+        </div>
+
+    </div>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
 </body>
 </html>
