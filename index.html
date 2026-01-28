@@ -19,10 +19,12 @@
 
         .section-title { border-left: 5px solid var(--primary); padding-left: 15px; margin: 40px 0 20px; }
         
+        /* Links Table Styling */
         .resources-table { width: 100%; border-collapse: collapse; background: var(--card); border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
         .resources-table th { background: #f1f5f9; padding: 15px; text-align: left; }
         .resources-table td { padding: 12px 15px; border-top: 1px solid #e2e8f0; }
 
+        /* Lab Grid Styling */
         .lab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
         .lab-card { background: var(--card); padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
         .code-box { max-height: 200px; overflow-y: auto; border-radius: 5px; margin: 10px 0; font-size: 0.85rem; }
@@ -42,8 +44,8 @@
 
     <h2 class="section-title">Course Materials</h2>
     <div style="margin-bottom: 20px;">
-        <a href="https://drive.google.com/file/d/1Z1bf9uiviM6LRtjLRceIXZpvCr9Rvjz-/view" class="btn btn-blue" target="_blank">Syllabus</a>
-        <a href="https://drive.google.com/file/d/1FDuKQhCGGTjgPpzzyOgRknX5dHqQX1j6/view" class="btn btn-blue" style="background:#7c3aed" target="_blank">Textbook</a>
+        <a href="https://drive.google.com/file/d/1Z1bf9uiviM6LRtjLRceIXZpvCr9Rvjz-/view" class="btn btn-blue">Syllabus</a>
+        <a href="https://drive.google.com/file/d/1FDuKQhCGGTjgPpzzyOgRknX5dHqQX1j6/view" class="btn btn-blue" style="background:#7c3aed">Textbook</a>
     </div>
 
     <table class="resources-table">
@@ -51,77 +53,79 @@
             <tr><th>Sl No</th><th>Topic</th><th>Link</th></tr>
         </thead>
         <tbody>
-            <tr><td>1</td><td>Introduction</td><td><a href="https://www.canva.com/design/DAG78hn03PE/view" target="_blank">Slides</a></td></tr>
-            <tr><td>2</td><td>Fundamentals of Problem Solving</td><td><a href="https://www.canva.com/design/DAG8OggP2WQ/view" target="_blank">Slides</a></td></tr>
-            <tr><td>3</td><td>Algorithm Efficiency</td><td><a href="https://www.canva.com/design/DAG8Ou5pnKw/view" target="_blank">Slides</a></td></tr>
-            <tr><td>4</td><td>Recursive Algorithms</td><td><a href="https://www.canva.com/design/DAG95bhYrxE/view" target="_blank">Slides</a></td></tr>
-            <tr><td>5</td><td>Brute Force & Search</td><td><a href="https://www.canva.com/design/DAG-jo_EbdM/view" target="_blank">Slides</a></td></tr>
-            <tr><td>6</td><td>Brute Force Approaches (Contd..)</td><td><a href="https://www.canva.com/design/DAG_BfBKflY/view" target="_blank">Slides</a></td></tr>
+            <tr><td>1</td><td>Introduction</td><td><a href="https://www.canva.com/design/DAG78hn03PE/view">Slides</a></td></tr>
+            <tr><td>2</td><td>Fundamentals of Problem Solving</td><td><a href="https://www.canva.com/design/DAG8OggP2WQ/view">Slides</a></td></tr>
+            <tr><td>3</td><td>Algorithm Efficiency</td><td><a href="https://www.canva.com/design/DAG8Ou5pnKw/view">Slides</a></td></tr>
+            <tr><td>4</td><td>Recursive Algorithms</td><td><a href="https://www.canva.com/design/DAG95bhYrxE/view">Slides</a></td></tr>
+            <tr><td>5</td><td>Brute Force & Search</td><td><a href="https://www.canva.com/design/DAG-jo_EbdM/view">Slides</a></td></tr>
         </tbody>
     </table>
 
-    <h2 class="section-title">Lab Programs & Performance Analysis</h2>
+    <h2 class="section-title">Algorithm Lab (Python)</h2>
     <div class="lab-grid">
         
         <div class="lab-card">
             <h3>Selection Sort</h3>
             <div class="code-box">
-                <pre><code class="language-python">def selection_sort(arr):
+                <pre><code class="language-python"># selection_sort.py
+def selection_sort(arr):
     n = len(arr)
     for i in range(n - 1):
-        min_index = i
+        min_idx = i
         for j in range(i + 1, n):
-            if arr[j] < arr[min_index]:
-                min_index = j
-        arr[i], arr[min_index] = arr[min_index], arr[i]</code></pre>
+            if arr[j] < arr[min_idx]: min_idx = j
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]</code></pre>
             </div>
-            <p>Complexity: $O(n^2)$</p>
-            <img src="ADA/selection_sort_time_complexity.png" class="graph-img" alt="Selection Sort Analysis">
-            <a href="ADA/selection_sort.py" class="btn btn-blue" download>Download Code</a>
+            <img src="selection_sort_time_complexity.png" class="graph-img" alt="Selection Sort Complexity">
         </div>
 
         <div class="lab-card">
             <h3>Bubble Sort</h3>
             <div class="code-box">
-                <pre><code class="language-python">def bubble_sort(arr):
+                <pre><code class="language-python"># bubble_sort.py
+def bubble_sort(arr):
     n = len(arr)
     for i in range(n - 1):
         for j in range(0, n - i - 1):
             if arr[j] > arr[j + 1]:
                 arr[j], arr[j + 1] = arr[j + 1], arr[j]</code></pre>
             </div>
-            <p>Complexity: $O(n^2)$</p>
-            <img src="ADA/bubble_sort_time_complexity.png" class="graph-img" alt="Bubble Sort Analysis">
-            <a href="ADA/bubble_sort.py" class="btn btn-blue" download>Download Code</a>
+            <img src="bubble_sort_time_complexity.png" class="graph-img" alt="Bubble Sort Complexity">
         </div>
 
         <div class="lab-card">
             <h3>Topological Sort</h3>
-            <p>Using source removal (indegree) method.</p>
-            <a href="ADA/topological_sort.py" class="btn btn-blue" download>Download Script</a>
+            <p>Source removal implementation for Directed Acyclic Graphs.</p>
+            <div class="code-box">
+                <pre><code class="language-python"># topological_sort.py
+# (Refer to your uploaded file for full code)</code></pre>
+            </div>
         </div>
 
         <div class="lab-card">
             <h3>Dijkstra's Algorithm</h3>
-            <p>Shortest path algorithm for weighted graphs.</p>
-            <a href="ADA/dijkstras.py" class="btn btn-blue" download>Download Script</a>
-        </div>
-
-        <div class="lab-card">
-            <h3>Prim's & Kruskal's</h3>
-            <p>Minimum Spanning Tree implementations.</p>
-            <a href="ADA/Prims.py" class="btn btn-blue" download>Prim's</a>
-            <a href="ADA/Kruskals.py" class="btn btn-blue" download>Kruskal's</a>
-        </div>
-
-        <div class="lab-card">
-            <h3>Newton's Square Root</h3>
+            <p>Single-source shortest path using adjacency matrix.</p>
             <div class="code-box">
-                <pre><code class="language-python">guess = n / 2
+                <pre><code class="language-python"># dijkstras.py</code></pre>
+            </div>
+        </div>
+
+        <div class="lab-card">
+            <h3>MST (Prim's & Kruskal's)</h3>
+            <p>Minimum Cost Spanning Tree implementations.</p>
+            <div class="code-box">
+                <pre><code class="language-python"># Prims.py & Kruskals.py</code></pre>
+            </div>
+        </div>
+
+        <div class="lab-card">
+            <h3>Square Root</h3>
+            <p>Newton's Method for finding square roots.</p>
+            <div class="code-box">
+                <pre><code class="language-python"># square.py
 while(guess != (guess + n / guess) / 2):
     guess = (guess + n / guess) / 2</code></pre>
             </div>
-            <a href="ADA/square.py" class="btn btn-blue" download>Download Code</a>
         </div>
 
     </div>
