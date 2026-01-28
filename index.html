@@ -95,79 +95,77 @@
             <tr><th>Sl No</th><th>Topic</th><th>Link</th></tr>
         </thead>
         <tbody>
-            <tr><td>1</td><td>Introduction</td><td><a href="https://www.canva.com/design/DAG78hn03PE/view"><i class="fas fa-external-link-alt"></i></a></td></tr>
-            <tr><td>2</td><td>Fundamentals of Problem Solving</td><td><a href="https://www.canva.com/design/DAG8OggP2WQ/view"><i class="fas fa-external-link-alt"></i></a></td></tr>
-            <tr><td>3</td><td>Algorithm Efficiency</td><td><a href="https://www.canva.com/design/DAG8Ou5pnKw/view"><i class="fas fa-external-link-alt"></i></a></td></tr>
-            <tr><td>4</td><td>Recursive Algorithms</td><td><a href="https://www.canva.com/design/DAG95bhYrxE/view"><i class="fas fa-external-link-alt"></i></a></td></tr>
-            <tr><td>5</td><td>Brute Force & Search</td><td><a href="https://www.canva.com/design/DAG-jo_EbdM/view"><i class="fas fa-external-link-alt"></i></a></td></tr>
+            <tr><td>1</td><td>Introduction</td><td><a href="https://www.canva.com/design/DAG78hn03PE/view" target="_blank"><i class="fas fa-external-link-alt"></i></a></td></tr>
+            <tr><td>2</td><td>Fundamentals of Problem Solving</td><td><a href="https://www.canva.com/design/DAG8OggP2WQ/view" target="_blank"><i class="fas fa-external-link-alt"></i></a></td></tr>
+            <tr><td>3</td><td>Algorithm Efficiency</td><td><a href="https://www.canva.com/design/DAG8Ou5pnKw/view" target="_blank"><i class="fas fa-external-link-alt"></i></a></td></tr>
+            <tr><td>4</td><td>Recursive Algorithms</td><td><a href="https://www.canva.com/design/DAG95bhYrxE/view" target="_blank"><i class="fas fa-external-link-alt"></i></a></td></tr>
+            <tr><td>5</td><td>Brute Force & Search</td><td><a href="https://www.canva.com/design/DAG-jo_EbdM/view" target="_blank"><i class="fas fa-external-link-alt"></i></a></td></tr>
+            <tr><td>6</td><td>Brute Force Approaches (Contd..)</td><td><a href="https://www.canva.com/design/DAG_BfBKflY/view" target="_blank"><i class="fas fa-external-link-alt"></i></a></td></tr>
         </tbody>
     </table>
 
-    <h2 class="section-title">Algorithm Lab (Python)</h2>
+    <h2 class="section-title">Lab Programs & Performance Analysis</h2>
     <div class="lab-grid">
         
         <div class="lab-card">
             <h3>Selection Sort</h3>
             <div class="code-box">
-                <pre><code class="language-python"># selection_sort.py
-def selection_sort(arr):
+                <pre><code class="language-python">def selection_sort(arr):
     n = len(arr)
     for i in range(n - 1):
-        min_idx = i
+        min_index = i
         for j in range(i + 1, n):
-            if arr[j] < arr[min_idx]: min_idx = j
-        arr[i], arr[min_idx] = arr[min_idx], arr[i]</code></pre>
+            if arr[j] < arr[min_index]:
+                min_index = j
+        arr[i], arr[min_index] = arr[min_index], arr[i]</code></pre>
             </div>
-            <img src="selection_sort_time_complexity.png" class="graph-img" alt="Selection Sort Complexity">
+            <p>Complexity: $O(n^2)$</p>
+            <img src="ADA/selection_sort_time_complexity.png" class="graph-img" alt="Selection Sort Analysis">
+            <a href="ADA/selection_sort.py" class="btn btn-blue" download>Download Code</a>
         </div>
 
         <div class="lab-card">
             <h3>Bubble Sort</h3>
             <div class="code-box">
-                <pre><code class="language-python"># bubble_sort.py
-def bubble_sort(arr):
+                <pre><code class="language-python">def bubble_sort(arr):
     n = len(arr)
     for i in range(n - 1):
         for j in range(0, n - i - 1):
             if arr[j] > arr[j + 1]:
                 arr[j], arr[j + 1] = arr[j + 1], arr[j]</code></pre>
             </div>
-            <img src="bubble_sort_time_complexity.png" class="graph-img" alt="Bubble Sort Complexity">
+            <p>Complexity: $O(n^2)$</p>
+            <img src="ADA/bubble_sort_time_complexity.png" class="graph-img" alt="Bubble Sort Analysis">
+            <a href="ADA/bubble_sort.py" class="btn btn-blue" download>Download Code</a>
         </div>
 
         <div class="lab-card">
             <h3>Topological Sort</h3>
-            <p>Source removal implementation for Directed Acyclic Graphs.</p>
-            <div class="code-box">
-                <pre><code class="language-python"># topological_sort.py
-# (Refer to your uploaded file for full code)</code></pre>
-            </div>
+            <p>Using source removal (indegree) method.</p>
+            <a href="ADA/topological_sort.py" class="btn btn-blue" download>Download Script</a>
         </div>
 
         <div class="lab-card">
             <h3>Dijkstra's Algorithm</h3>
-            <p>Single-source shortest path using adjacency matrix.</p>
-            <div class="code-box">
-                <pre><code class="language-python"># dijkstras.py</code></pre>
-            </div>
+            <p>Shortest path algorithm for weighted graphs.</p>
+            <a href="ADA/dijkstras.py" class="btn btn-blue" download>Download Script</a>
         </div>
 
         <div class="lab-card">
-            <h3>MST (Prim's & Kruskal's)</h3>
-            <p>Minimum Cost Spanning Tree implementations.</p>
-            <div class="code-box">
-                <pre><code class="language-python"># Prims.py & Kruskals.py</code></pre>
-            </div>
+            <h3>Prim's & Kruskal's</h3>
+            <p>Minimum Spanning Tree implementations.</p>
+            <a href="ADA/Prims.py" class="btn btn-blue" download>Prim's</a>
+            <a href="ADA/Kruskals.py" class="btn btn-blue" download>Kruskal's</a>
         </div>
 
         <div class="lab-card">
-            <h3>Square Root</h3>
-            <p>Newton's Method for finding square roots.</p>
+            <h3>Newton's Square Root</h3>
             <div class="code-box">
-                <pre><code class="language-python"># square.py
+                <pre><code class="language-python">guess = n / 2
 while(guess != (guess + n / guess) / 2):
     guess = (guess + n / guess) / 2</code></pre>
             </div>
+            <a href="ADA/square.py" class="btn btn-blue" download>Download Code</a>
         </div>
 
     </div>
