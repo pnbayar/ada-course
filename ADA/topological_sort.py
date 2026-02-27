@@ -1,6 +1,6 @@
 def topological_sort(n, edges):
     # Adjacency matrix
-    adj = [[0]*n for _ in range(n)]
+    adj = [[0]*n]*n
     indegree = [0]*n
 
     # Build graph
