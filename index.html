@@ -110,6 +110,64 @@
 
     <h2 class="section-title">Lab Programs & Performance Analysis</h2>
     <div class="lab-grid">
+
+        <div class="lab-card">
+            <h3>Floyd's Algorithm</h3>
+            <div class="code-box">
+                <pre class="language-python" tabindex="0"><code class="language-python"><span class="token keyword">def</span> <span class="token function">floyd_warshall</span><span class="token punctuation">(</span>graph<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    v <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>graph<span class="token punctuation">)</span>
+    dist <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span><span class="token builtin">map</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> i<span class="token punctuation">:</span> <span class="token builtin">list</span><span class="token punctuation">(</span><span class="token builtin">map</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> j<span class="token punctuation">:</span> j<span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> graph<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> k <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">for</span> j <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                dist<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token builtin">min</span><span class="token punctuation">(</span>dist<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> dist<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">+</span> dist<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> dist</code></pre>
+            </div>
+            <p>Complexity: $O(V^3)$</p>
+            <a href="ADA/floyds.py" class="btn btn-blue" download="">Download Code</a>
+        </div>
+
+        <div class="lab-card">
+            <h3>0/1 Knapsack (DP)</h3>
+            <p>Solve the 0/1 Knapsack problem using Dynamic Programming.</p>
+            <p>Complexity: $O(N \times W)$</p>
+            <a href="ADA/knapsack_dp.py" class="btn btn-blue" download="">Download Code</a>
+        </div>
+
+        <div class="lab-card">
+            <h3>Greedy Knapsack</h3>
+            <p>Discrete & Continuous Knapsack using Greedy Approximation.</p>
+            <p>Complexity: $O(N \log N)$</p>
+            <a href="ADA/knapsack_greedy.py" class="btn btn-blue" download="">Download Code</a>
+        </div>
+
+        <div class="lab-card">
+            <h3>Quick Sort</h3>
+            <p>Sorting with Quick Sort, including empirical time analysis for $n > 5000$.</p>
+            <p>Complexity: $O(N \log N)$ average</p>
+            <img src="ADA/quick_sort_time_complexity.png" class="graph-img" alt="Quick Sort Analysis">
+            <a href="ADA/quick_sort.py" class="btn btn-blue" download="">Download Code</a>
+        </div>
+
+        <div class="lab-card">
+            <h3>Merge Sort</h3>
+            <p>Sorting with Merge Sort, including empirical time analysis for $n > 5000$.</p>
+            <p>Complexity: $O(N \log N)$</p>
+            <img src="ADA/merge_sort_time_complexity.png" class="graph-img" alt="Merge Sort Analysis">
+            <a href="ADA/merge_sort.py" class="btn btn-blue" download="">Download Code</a>
+        </div>
+
+        <div class="lab-card">
+            <h3>N Queen's Problem</h3>
+            <div class="code-box">
+                <pre class="language-python" tabindex="0"><code class="language-python"><span class="token keyword">def</span> <span class="token function">solve_n_queens</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># Solves N-Queens using Backtracking</span>
+    board <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'.'</span><span class="token punctuation">]</span> <span class="token operator">*</span> n <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">]</span>
+    <span class="token comment"># ... (Backtracking logic)</span></code></pre>
+            </div>
+            <p>Complexity: $O(N!)$</p>
+            <a href="ADA/n_queens.py" class="btn btn-blue" download="">Download Code</a>
+        </div>
         
         <div class="lab-card">
             <h3>Selection Sort</h3>
