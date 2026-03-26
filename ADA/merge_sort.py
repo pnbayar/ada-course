@@ -1,51 +1,53 @@
-import random
 import time
+import random
+import matplotlib.pyplot as plt
 
-from matplotlib import pyplot as plt
+def merge_sort(arr):
+    if len(arr) > 1:
+        mid = len(arr) // 2
+        L = arr[:mid]
+        R = arr[mid:]
 
-def merge_sort(a):
-    n=len(a)
-    if(n>1):
-        b,c=a[0:n//2],a[n//2:n]
-        merge_sort(b)
-        merge_sort(c)
-        merge(a,b,c)
-      
-def merge(a,b,c):
-    n1,n2=len(b),len(c)
-    i=j=k=0
+        merge_sort(L)
+        merge_sort(R)
 
-    while(i < n1 and j < n2):
-        if(b[i]<c[j]):
-            a[k]=b[i];i+=1
-        else:
-            a[k]=c[j];j+=1
-        k+=1
+        i = j = k = 0
+        while i < len(L) and j < len(R):
+            if L[i] < R[j]:
+                arr[k] = L[i]
+                i += 1
+            else:
+                arr[k] = R[j]
+                j += 1
+            k += 1
 
-    while(i<n1):
-        a[k]=b[i];i+=1;k+=1
+        while i < len(L):
+            arr[k] = L[i]
+            i += 1
+            k += 1
 
-    while(j<n2):
-        a[k]=c[j];j+=1;k+=1
+        while j < len(R):
+            arr[k] = R[j]
+            j += 1
+            k += 1
 
+if __name__ == "__main__":
+    elements = [5000, 10000, 15000, 20000, 25000]
+    times = []
 
-n_list=[5000,6000,7000,8000,9000,10000]
-sort_time=[]
-for n in n_list: 
-    l=[random.randint(1,1000000) for _ in range(n)]
-    s_t=time.time()
-    merge_sort(l)
-    e_t=time.time()
-    sort_time.append(e_t-s_t)
+    for n in elements:
+        arr = [random.randint(1, 100000) for _ in range(n)]
+        start = time.time()
+        merge_sort(arr)
+        end = time.time()
+        times.append(end - start)
+        print(f"Sorted {n} elements in {end - start:.4f} seconds.")
 
-
-# Plotting the graph
-plt.plot(n_list,sort_time, marker='x')
-plt.xlabel("Number of Elements (n)")
-plt.ylabel("Time Taken (seconds)")
-plt.title("Merge sort Sort: Time Complexity Analysis")
-plt.grid(True)
-# Save the plot
-plt.savefig("Merge_sort_time_complexity.png", 
-            dpi=300, bbox_inches='tight')
-plt.show()
+    # Plotting
+    plt.plot(elements, times, marker='o', color='green')
+    plt.title("Merge Sort Time Complexity")
+    plt.xlabel("Number of Elements (n)")
+    plt.ylabel("Time taken (seconds)")
+    plt.grid()
+    plt.savefig("merge_sort_time_complexity.png")
+    plt.show()
